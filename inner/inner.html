@@ -50,9 +50,9 @@
 	<div class="jumbotron">
 		<div class="container">
 
-		  <div class="starter-template">
-			<h1>Event Name</h1>
-			<p class="lead">Date and Time to Event<br> ???</p>
+		  <div class="starter-template" ng-controller = "HeadingController as heading">
+			<h1>{{heading.event.Title}}</h1>
+			<p class="lead">{{heading.event.Description}}<br> {{heading.event.Secondary}} <br> {{heading.event.Time}} <br> {{heading.event.Location}}</p>
 			<!--ensure this works with javascript -->
 			<p><a href="#disable" class="btn btn-primary btn-sm" role="button">Edit</a></p>
 		  </div>

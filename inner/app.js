@@ -1,7 +1,9 @@
 (function(){
 	var app = angular.module('inner',[]);
 	
-	app.controller('InnerController', function() {
+	app.controller('HeadingController', function() {
 	
+		InnerNameSpace.myModule.init();
+		this.event = InnerNameSpace.myModule.event;
 	});
 })();
