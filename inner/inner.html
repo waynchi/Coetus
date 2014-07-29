@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="inner">
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -14,7 +14,8 @@
     <link href="../bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->
-    <link href="starter-template.css" rel="stylesheet">
+    <link href="inner.css" rel="stylesheet" type="text/css">
+	<!--<link href="inner.less" rel="stylesheet/less" type="text/css">-->
 
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
@@ -46,15 +47,40 @@
       </div>
     </div>
 
-    <div class="container">
+	<div class="jumbotron">
+		<div class="container">
 
-      <div class="starter-template">
-        <h1>Welcome to Coetus!</h1>
-        <p class="lead">Coetus is your one-stop tool to planning the perfect event.<br> Click the button below to start planning.</p>
-		<p><a href="inner/inner.html" class="btn btn-primary btn-lg" role="button">Plan Your Event &raquo;</a></p>
-      </div>
+		  <div class="starter-template">
+			<h1>Event Name</h1>
+			<p class="lead">Date and Time to Event<br> ???</p>
+			<!--ensure this works with javascript -->
+			<p><a href="#disable" class="btn btn-primary btn-sm" role="button">Edit</a></p>
+		  </div>
 
-    </div><!-- /.container -->
+		</div>
+		<!-- /.container -->
+	</div>
+	<div class="container">
+		<div class="row">
+			<div class="col-md-4">
+				<h2> Participants </h2>
+				<p> </p>
+			</div>
+			<div class="col-md-4">
+				<h2> Item Check-list </h2>
+				<p> </p>
+			</div>
+			<div class="col-md-4">
+				<h2> Suggestions </h2>
+				<p> </p>
+			</div>
+		
+		</div>
+	<hr>
+	<footer>
+		<p>&copy; Coetus 2014 </p>
+	</footer>
+	</div>
 
 
     <!-- Bootstrap core JavaScript
@@ -64,6 +90,9 @@
     <script src="../bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
 	<script type="text/javascript" src="script.js"> </script>
 	<script type="text/javascript" src="../angular.min.js"></script>
+	<script type="text/javascript" src="app.js"></script>
+	<!--Can't find this javascript file error??? -->
+	<!--<script type="text/javascript" src="less.min.js"></script>  --> 
 	
   </body>
 </html>

@@ -1,0 +1,18 @@
+body{
+	padding-top: 70px;
+}
+
+.jumbotron {
+	padding: 0.5em 0.6em;
+}
+
+.jumbotron  h1{
+	font-size:3em;
+}
+
+.jumbotron p{
+	font-size: 1.5em;
+	.btn {
+		padding: 0em;
+	}
+}
