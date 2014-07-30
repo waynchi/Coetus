@@ -25,10 +25,16 @@ InnerNameSpace.myModule = function(){
 		event.Time = event.Hour + " on " + event.Month + ", " + event.Day + " , " + event.Year;
 	};
 	
+	var EditClick = function(){
+		//This needs to open a page that allows you to edit event details.
+	}
+		
+	
 	var oPublic = 
 	{
 		init: init,
-		event: event
+		event: event,
+		EditClick: EditClick
 		/* eventTitle: eventTitle,
 		eventDescription: eventDescription,
 		eventTime: eventTime,
@@ -36,3 +42,9 @@ InnerNameSpace.myModule = function(){
 	};
 	return oPublic;
 }();
+
+
+(function() {
+	$('#Edit').attr('href', "javascript:InnerNameSpace.myModule.EditClick()");
+})();
+
