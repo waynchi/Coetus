@@ -27,6 +27,7 @@ InnerNameSpace.myModule = function(){
 	
 	var EditClick = function(){
 		//This needs to open a page that allows you to edit event details.
+		window.open("", '_self', 'width=300, height=250');
 	}
 		
 	
@@ -43,8 +44,7 @@ InnerNameSpace.myModule = function(){
 	return oPublic;
 }();
 
-
-(function() {
-	$('#Edit').attr('href', "javascript:InnerNameSpace.myModule.EditClick()");
+(function(){
+	$('#eventTitleForm').text = "Test";
 })();
 
