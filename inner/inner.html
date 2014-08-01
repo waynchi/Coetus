@@ -69,11 +69,27 @@
 			<h4 class="modal-title" id="myModalLabel">Event Changes</h4>
 		  </div>
 		  <div class="modal-body" ng-controller = "HeadingController as heading">
-			<input class="form-control" placeholder="Event Title" value="{{heading.event.Title}}" >
-			<input class="form-control" placeholder="Event Description" value="{{heading.event.Description}}">
-			<input class="form-control" placeholder="Event Secondary Description" value="{{heading.event.Secondary}}">
-			<input class="form-control" placeholder="Event Time" value="{{heading.event.Time}}">
-			<input class="form-control" placeholder="Event Location" value="{{heading.event.Location}}">
+			<div class="form-group">
+				<label for="eventTitle">Event Title</label>
+				<input class="form-control" id="eventTitle" value="{{heading.event.Title}}" >
+			</div>
+			<div class="form-group">
+				<label for="eventDescription">Event Description</label>
+				<input class="form-control" id="eventDescription" value="{{heading.event.Description}}">
+			</div>
+			<div class="form-group">
+				<label for="eventSecondary">Event Secondary Description</label>
+				<input class="form-control" id="eventSecondary" value="{{heading.event.Secondary}}">
+			</div>
+			<div class="form-group">
+				<label for="eventTime">Event Time</label>
+				<div class="row">
+				<input class="form-control" id="eventTime" value="{{heading.event.Hour}}">
+			</div>
+			<div class="form-group">
+				<label for="eventLocation">Event Location</label>
+				<input class="form-control" id="eventLocation" value="{{heading.event.Location}}">
+			</div>
 		  </div>
 		  <div class="modal-footer">
 			<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
