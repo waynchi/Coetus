@@ -14,12 +14,10 @@ InnerNameSpace.myModule = function(){
 		Description: "Video Game Party featuring Super Smash Bros., League of Legends, Starcraft II, and more!",
 		Secondary: "Dinner will be served.",
 		Calendar: "7/16/2014",
-		Hour: "7" + " "+ "P.M.",
+		Hour: "10:00 AM",
 		Time: "",
 		Location: "USC Mudd Hall Room 101"
 	};
-	
-	var test = "TEST";
 	
 	var init = function(){
 		event.Time = event.Hour + " on " + event.Calendar;
@@ -51,8 +49,7 @@ InnerNameSpace.myModule = function(){
 		event: event,
 		EditClick: EditClick,
 		closeModal: closeModal,
-		saveModal: saveModal,
-		test: test
+		saveModal: saveModal
 		/* eventTitle: eventTitle,
 		eventDescription: eventDescription,
 		eventTime: eventTime,
