@@ -16,3 +16,9 @@ body{
 		padding: 0em;
 	}
 }
+
+
+.datepicker{
+z-index:1151;
+}
+

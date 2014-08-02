@@ -12,7 +12,8 @@
 
     <!-- Bootstrap core CSS -->
     <link href="../bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
-
+	<link href="../bower_components/bootstrap/dist/css/datepicker.css" rel="stylesheet">
+	<link href="../bower_components/bootstrap-3-timepicker-master/css/bootstrap-timepicker.min.css" rel="stylesheet">
     <!-- Custom styles for this template -->
     <link href="inner.css" rel="stylesheet" type="text/css">
 	<!--<link href="inner.less" rel="stylesheet/less" type="text/css">-->
@@ -51,8 +52,8 @@
 		<div class="container">
 
 		  <div class="starter-template" ng-controller = "HeadingController as heading">
-			<h1>{{heading.event.Title}}</h1>
-			<p class="lead">{{heading.event.Description}}<br> {{heading.event.Secondary}} <br> {{heading.event.Time}} <br> {{heading.event.Location}}</p>
+			<h1 id="eventTitleHeader">{{heading.event.Title}}</h1>
+			<p class="lead">{{heading.event.Description}}<br> {{heading.event.Secondary}} <br> {{heading.event.Time}} <br> {{heading.test}}</p>
 			<p><a class="btn btn-primary btn-sm" data-toggle="modal" data-target="#myModal" role="button" id="Edit">Edit</a></p>
 		  </div>
 
@@ -82,9 +83,19 @@
 				<input class="form-control" id="eventSecondary" value="{{heading.event.Secondary}}">
 			</div>
 			<div class="form-group">
-				<label for="eventTime">Event Time</label>
 				<div class="row">
-				<input class="form-control" id="eventTime" value="{{heading.event.Hour}}">
+					<div class="col-lg-6">
+						<label for="timepicker">Time</label>
+						<div class="bootstrap-timepicker">
+							<input class="form-control" id="timepicker" value="{{heading.event.Hour}}">
+						</div>
+					</div>
+					<div class="col-lg-6">
+						<label for="datepicker">Date</label>
+						<input id="datepicker" class="form-control" value="{{heading.event.Calendar}}">
+					</div>
+				</div>
+				
 			</div>
 			<div class="form-group">
 				<label for="eventLocation">Event Location</label>
@@ -92,8 +103,8 @@
 			</div>
 		  </div>
 		  <div class="modal-footer">
-			<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-			<button type="button" class="btn btn-primary">Save changes</button>
+			<button id="closeModalButton" type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+			<button id="saveModalButton" type="button" class="btn btn-primary" data-dismiss="modal">Save changes</button>
 		  </div>
 		</div>
 	  </div>
@@ -128,6 +139,8 @@
     <!-- Placed at the end of the document so the pages load faster -->
     <script type="text/javascript" src="../bower_components/jquery/dist/jquery.min.js"></script>
     <script src="../bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+	<script src="../bower_components/bootstrap/dist/js/bootstrap-datepicker.js"></script>
+	<script src="../bower_components/bootstrap-3-timepicker-master/js/bootstrap-timepicker.min.js"></script>
 	<script type="text/javascript" src="script.js"> </script>
 	<script type="text/javascript" src="../angular.min.js"></script>
 	<script type="text/javascript" src="app.js"></script>
