@@ -58,6 +58,20 @@ InnerNameSpace.myModule = function(){
 	return oPublic;
 }();
 
+var BodyNameSpace = BodyNameSpace || {};
+
+BodyNameSpace.myModule= function() {
+
+	var people = ["Adam","Wayne","Jennifer","Richard","Eric"];
+
+	var oPublic =
+	{
+		people: people
+	};
+	
+	return oPublic;
+}();
+
 (function(){
 	$('#datepicker').datepicker();
 	
