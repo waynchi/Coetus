@@ -2,8 +2,10 @@
 $(document).ready(function() {
 	//$('.container').css('height', $('.container').prop('scrollHeight') + 'px');
 	console.log("TEST");
-	$('.list-group-item').click(function(){ console.log("TEST"); return false; });
+	$('#addSign').click(function(){ console.log("TEST"); return false; });
+	$('#Adam').click(function(){ console.log("TEST"); return false; });
 });
+
 
 var InnerNameSpace = InnerNameSpace || {};
 
@@ -90,10 +92,16 @@ BodyNameSpace.myModule= function() {
 		console.log("TEST");
 		$(this).addClass('active');
 	};
+	
+	var init = function(){
+		console.log('HI');
+		$('#Adam').click(function(){ console.log("TEST"); return false; });
+	};
 		
 
 	var oPublic =
 	{
+		init: init,
 		people: people,
 		setActive: setActive
 	};

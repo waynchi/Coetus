@@ -6,5 +6,7 @@
 		InnerNameSpace.myModule.init();
 		this.event = InnerNameSpace.myModule.event;
 		this.people = BodyNameSpace.myModule.people;
+		
 	});
+	BodyNameSpace.myModule.init();
 })();
