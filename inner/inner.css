@@ -22,3 +22,11 @@ body{
 z-index:1151;
 }
 
+#addSign {
+	float: right;
+	cursor: pointer; 
+	cursor: hand;
+	text-decoration: none;
+	color: inherit;
+	outline: none; 
+}

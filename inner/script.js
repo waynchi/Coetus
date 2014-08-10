@@ -1,6 +1,8 @@
 
 $(document).ready(function() {
 	//$('.container').css('height', $('.container').prop('scrollHeight') + 'px');
+	console.log("TEST");
+	$('.list-group-item').click(function(){ console.log("TEST"); return false; });
 });
 
 var InnerNameSpace = InnerNameSpace || {};
@@ -62,11 +64,38 @@ var BodyNameSpace = BodyNameSpace || {};
 
 BodyNameSpace.myModule= function() {
 
-	var people = ["Adam","Wayne","Jennifer","Richard","Eric"];
+	var people = [
+	{
+		name: "Adam",
+		attending: "Might Attend"
+	},
+	{
+		name: "Wayne",
+		attending: "Attending"
+	},
+	{
+		name: "Jennifer",
+		attending: "Attending"
+	},
+	{
+		name: "Richard",
+		attending: "Might Attend"
+	},
+	{
+		name: "Eric",
+		attending: "Not Attending"
+	}];
+	
+	var setActive = function(){
+		console.log("TEST");
+		$(this).addClass('active');
+	};
+		
 
 	var oPublic =
 	{
-		people: people
+		people: people,
+		setActive: setActive
 	};
 	
 	return oPublic;
@@ -97,3 +126,5 @@ BodyNameSpace.myModule= function() {
 	$('#closeModalButton').click(function(){InnerNameSpace.myModule.closeModal()});
 	$('#saveModalButton').click(function(){InnerNameSpace.myModule.saveModal()});
 })();
+
+

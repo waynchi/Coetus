@@ -111,12 +111,26 @@
 	</div>
 	<!-- /.Modal -->
 	
+	
+	
+	
 	<div class="container" ng-controller="InnerController as innerBody">
 		<div class="row">
 			<div class="col-md-4">
-				<h2> Participants </h2>
+				<h2> 
+					<span> Participants </span>
+					<a href="#" id="addSign" class="glyphicon glyphicon-plus-sign"></a>
+					
+				</h2>
 					<div class ="list-group" >
-						<a ng-repeat="people in innerBody.people" class="list-group-item"> {{people}} </a>
+						<div ng-repeat="people in innerBody.people">
+							<a class="list-group-item"> 
+									{{people.name}}
+							</a>
+							<a ng-show="people.attending === 'Attending'" class="list-group-item">
+									{{people.attending}}
+							</a>
+						</div>
 					</div>
 			</div>
 			<div class="col-md-4">
