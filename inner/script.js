@@ -95,7 +95,7 @@ BodyNameSpace.myModule= function() {
 	
 	var init = function(){
 		console.log('HI');
-		$('#Adam').click(function(){ console.log("TEST"); return false; });
+		$('#Adam').click(function(){setActive(); return false; });
 	};
 		
 
