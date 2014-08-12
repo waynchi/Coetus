@@ -123,11 +123,11 @@
 					
 				</h2>
 					<div class ="list-group" >
-						<div ng-repeat="people in people" >
-							<a  href='#' id="{{people.name}}" class="list-group-item" my-repeat-directive> 
+						<div ng-repeat="people in people | orderBy: 'name'" ng-controller="RepeatController as repeatControl">
+							<a  href='#' id="{{people.name}}" ng-click="setActive();" class="list-group-item" my-repeat-directive> 
 									{{people.name}}
 							</a>
-							<a ng-show="people.attending === 'Attending'" class="list-group-item">
+							<a id="{{people.name + 'Detail'}}" ng-show="active" class="list-group-item">
 									{{people.attending}}
 							</a>
 						</div>

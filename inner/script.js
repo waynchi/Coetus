@@ -95,15 +95,20 @@ BodyNameSpace.myModule= function() {
 	
 	var setActive = function(nameSelector, person){
 		console.log(person);
+		personDetail = nameSelector + 'Detail';
 		if(person.active)
 		{
 			$(nameSelector).removeClass('active');
 			person.active = !person.active;
+			//console.log(personDetail);
+			//$(personDetail).hide();
 		}
 		else
 		{
 			$(nameSelector).addClass('active');
 			person.active = !person.active;
+			//console.log(personDetail);
+			//$(personDetail).show();
 		}
 	};
 	

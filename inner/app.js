@@ -15,6 +15,13 @@
 		});
 	}]);
 	
+	app.controller('RepeatController', ['$scope', function($scope) {
+		$scope.active = false;
+		$scope.setActive = function(){
+			$scope.active = !$scope.active;
+		}
+	}]);
+	
 	app.directive('myRepeatDirective', function($timeout) {
 	  return function(scope, element, attrs) {
 		if (scope.$last){
@@ -22,7 +29,6 @@
 			$timeout(function () {
 				scope.$emit('ngRepeatFinished');
 			});
-		  $('#Adam').click(function(){ console.log("TEST"); return false; });
 		}
 	  };
 	})
