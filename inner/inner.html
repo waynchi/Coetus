@@ -51,9 +51,9 @@
 	<div class="jumbotron">
 		<div class="container">
 
-		  <div class="starter-template" ng-controller = "InnerController as heading">
-			<h1 id="eventTitleHeader">{{heading.event.Title}}</h1>
-			<p class="lead">{{heading.event.Description}}<br> {{heading.event.Secondary}} <br> {{heading.event.Hour + " on " + heading.event.Calendar}} <br> {{heading.event.Location}}</p>
+		  <div class="starter-template" ng-controller = "HeadingController as heading">
+			<h1 id="eventTitleHeader">{{event.Title}}</h1>
+			<p class="lead">{{event.Description}}<br> {{event.Secondary}} <br> {{event.Hour + " on " + event.Calendar}} <br> {{event.Location}}</p>
 			<p><a class="btn btn-primary btn-sm" data-toggle="modal" data-target="#myModal" role="button" id="Edit">Edit</a></p>
 		  </div>
 
@@ -64,42 +64,42 @@
 	<!-- Modal -->
 	<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 	  <div class="modal-dialog">
-		<div class="modal-content" ng-controller="InnerController as modalControl">
+		<div class="modal-content" ng-controller="HeadingController as modalControl">
 		  <div class="modal-header">
 			<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
 			<h4 class="modal-title" id="myModalLabel">Event Changes</h4>
 		  </div>
-		  <div class="modal-body" ng-controller = "InnerController as heading">
+		  <div class="modal-body" ng-controller = "HeadingController as heading">
 			<div class="form-group">
 				<label for="eventTitle">Event Title</label>
-				<input class="form-control" ng-model="modalControl.event.Title" id="eventTitle" value="{{heading.event.Title}}" >
+				<input class="form-control" ng-model="event.Title" id="eventTitle" value="{{event.Title}}" >
 			</div>
 			<div class="form-group">
 				<label for="eventDescription">Event Description</label>
-				<input class="form-control" ng-model="modalControl.event.Description" id="eventDescription" value="{{heading.event.Description}}">
+				<input class="form-control" ng-model="event.Description" id="eventDescription" value="{{event.Description}}">
 			</div>
 			<div class="form-group">
 				<label for="eventSecondary">Event Secondary Description</label>
-				<input class="form-control" ng-model="modalControl.event.Secondary" id="eventSecondary" value="{{heading.event.Secondary}}">
+				<input class="form-control" ng-model="event.Secondary" id="eventSecondary" value="{{event.Secondary}}">
 			</div>
 			<div class="form-group">
 				<div class="row">
 					<div class="col-lg-6">
 						<label for="timepicker">Time</label>
 						<div class="bootstrap-timepicker">
-							<input class="form-control" ng-model="modalControl.event.Hour" id="timepicker" value="{{heading.event.Hour}}">
+							<input class="form-control" ng-model="event.Hour" id="timepicker" value="{{event.Hour}}">
 						</div>
 					</div>
 					<div class="col-lg-6">
 						<label for="datepicker">Date</label>
-						<input class="form-control" ng-model="modalControl.event.Calendar" id="datepicker" value="{{heading.event.Calendar}}">
+						<input class="form-control" ng-model="event.Calendar" id="datepicker" value="{{event.Calendar}}">
 					</div>
 				</div>
 				
 			</div>
 			<div class="form-group">
 				<label for="eventLocation">Event Location</label>
-				<input class="form-control" ng-model="modalControl.event.Location" id="eventLocation" value="{{heading.event.Location}}">
+				<input class="form-control" ng-model="event.Location" id="eventLocation" value="{{event.Location}}">
 			</div>
 		  </div>
 		  <div class="modal-footer">
@@ -114,7 +114,7 @@
 	
 	
 	
-	<div class="container" ng-controller="InnerController as innerBody">
+	<div class="container" ng-controller="BodyController as innerBody">
 		<div class="row">
 			<div class="col-md-4">
 				<h2> 
@@ -123,7 +123,7 @@
 					
 				</h2>
 					<div class ="list-group" >
-						<div ng-repeat="people in innerBody.people">
+						<div ng-repeat="people in people" >
 							<a  href='#' id="{{people.name}}" class="list-group-item"> 
 									{{people.name}}
 							</a>
