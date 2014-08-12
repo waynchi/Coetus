@@ -69,33 +69,50 @@ BodyNameSpace.myModule= function() {
 	var people = [
 	{
 		name: "Adam",
-		attending: "Might Attend"
+		attending: "Might Attend",
+		active: false
 	},
 	{
 		name: "Wayne",
-		attending: "Attending"
+		attending: "Attending",
+		active: false
 	},
 	{
 		name: "Jennifer",
-		attending: "Attending"
+		attending: "Attending",
+		active: false
 	},
 	{
 		name: "Richard",
-		attending: "Might Attend"
+		attending: "Might Attend",
+		active: false
 	},
 	{
 		name: "Eric",
-		attending: "Not Attending"
+		attending: "Not Attending",
+		active: false
 	}];
 	
-	var setActive = function(){
-		console.log("TEST");
-		$(this).addClass('active');
+	var setActive = function(nameSelector, person){
+		console.log(person);
+		if(person.active)
+		{
+			$(nameSelector).removeClass('active');
+			person.active = !person.active;
+		}
+		else
+		{
+			$(nameSelector).addClass('active');
+			person.active = !person.active;
+		}
 	};
 	
 	var init = function(){
 		console.log('HI');
-		$('#Adam').click(function(){setActive(); return false; });
+		jQuery.each(people, function(index,value) {
+			nameSelector = '#' + value.name;
+			$(nameSelector).click(function(){setActive('#'+this.id,value); return false; });
+		});
 	};
 		
 
