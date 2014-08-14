@@ -13,15 +13,6 @@
 		$scope.$on('ngRepeatFinished', function (ngRepeatFinishedEvent) {
 			BodyNameSpace.myModule.init();
 		});
-		
-		$scope.addPerson = function(){
-		person = {
-		name: "Joseph",
-		attending: "Might Attend",
-		active: false
-		};
-		$scope.people.push(person);
-		}
 	}]);
 	
 	app.controller('RepeatController', ['$scope', function($scope) {

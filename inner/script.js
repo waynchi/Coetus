@@ -2,6 +2,16 @@
 $(document).ready(function() {
 	//$('.container').css('height', $('.container').prop('scrollHeight') + 'px');
 	console.log("TEST");
+	$('#addPerson').click(function(){ person = {
+		name: "Joseph",
+		attending: "Might Attend",
+		active: false
+		};
+		console.log("Adding Person in jQuery");
+		BodyNameSpace.myModule.people.push(person); 
+		$('#personModal').modal('hide');
+		return false; });
+	//$('#saveModalButton').click(function(){InnerNameSpace.myModule.saveModal();return false;});
 });
 
 
@@ -29,7 +39,7 @@ InnerNameSpace.myModule = function(){
 	
 	var saveModal = function(){
 		console.log("Saving Modal");
-		event.Title = $('#eventTitle').value;
+		event.Title = "TESTING 123 TESTING"
 		event.Description = $('#eventDescription').value;
 		event.Secondary = $('#eventSecondary').value;
 		event.Calendar = $('#datepicker').value;
@@ -148,7 +158,7 @@ BodyNameSpace.myModule= function() {
 
 (function() {
 	$('#closeModalButton').click(function(){InnerNameSpace.myModule.closeModal()});
-	$('#saveModalButton').click(function(){InnerNameSpace.myModule.saveModal()});
+	//$('#saveModalButton').click(function(){InnerNameSpace.myModule.saveModal()});
 })();
 
 
