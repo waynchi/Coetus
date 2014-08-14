@@ -2,8 +2,6 @@
 $(document).ready(function() {
 	//$('.container').css('height', $('.container').prop('scrollHeight') + 'px');
 	console.log("TEST");
-	$('#addSign').click(function(){ console.log("TEST"); return false; });
-	$('#Adam').click(function(){ console.log("TEST"); return false; });
 });
 
 
@@ -27,10 +25,7 @@ InnerNameSpace.myModule = function(){
 		event.Time = event.Hour + " on " + event.Calendar;
 	};
 	
-	var EditClick = function(){
-		//This needs to open a page that allows you to edit event details.
-		window.open("", '_self', 'width=300, height=250');
-	}
+
 	
 	var saveModal = function(){
 		console.log("Saving Modal");
@@ -41,17 +36,16 @@ InnerNameSpace.myModule = function(){
 		event.Hour = $('#timepicker').value;
 		event.Time = event.Hour + " on " + event.Calendar;
 		event.Location = $('#eventLocation').value;
-	}
+	};
 	
 	var closeModal = function(){
 		console.log("Closing Modal");
-	}
+	};
 	
 	var oPublic = 
 	{
 		init: init,
 		event: event,
-		EditClick: EditClick,
 		closeModal: closeModal,
 		saveModal: saveModal
 		/* eventTitle: eventTitle,
