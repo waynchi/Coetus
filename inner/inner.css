@@ -31,7 +31,7 @@ z-index:1151;
 	outline: none; 
 }
 
-.personList .list-group-item:first-child
+.List .list-group-item:first-child
 {
 	cursor: pointer;
 	cursor: hand;

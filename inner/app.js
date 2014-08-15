@@ -10,6 +10,7 @@
 	app.controller('BodyController', ['$scope', function($scope) {
 	
 		$scope.people = BodyNameSpace.myModule.people;
+		$scope.itemList = BodyNameSpace.myModule.itemList;
 		$scope.$on('ngRepeatFinished', function (ngRepeatFinishedEvent) {
 			BodyNameSpace.myModule.init();
 		});
@@ -18,19 +19,19 @@
 	
 	app.controller('RepeatController', ['$scope', function($scope) {
 		$scope.active = false;
-		$scope.setActive = function(){
+		$scope.setActive = function(activater){
 			$scope.active = !$scope.active;		
-			var nameSelector = "[id='" + $scope.people.name + "']"; 
+			var nameSelector = "[id='" + activater.name + "']"; 
 			console.log(nameSelector);
-			if($scope.people.active)
+			if(activater.active)
 			{
 				$(nameSelector).removeClass('active');
-				$scope.people.active = !$scope.people.active;
+				activater.active = !activater.active;
 			}
 			else
 			{
 				$(nameSelector).addClass('active');
-				$scope.people.active = !$scope.people.active;
+				activater.active = !activater.active;
 			}
 		}
 	}]);

@@ -2,8 +2,12 @@
 $(document).ready(function() {
 	//$('.container').css('height', $('.container').prop('scrollHeight') + 'px');
 	var attendance = "Might Attend";
+	var brought = false;
 	$("input:radio[name=attendance]").click(function() {
 			attendance = $(this).val();
+	});
+	$("input:radio[name=brought]").click(function() {
+			brought = $(this).val();
 	});
 	$('#addPerson').click(function(){
 		var newName = $('#newName').val();
@@ -15,6 +19,18 @@ $(document).ready(function() {
 		console.log("Adding Person in jQuery");
 		BodyNameSpace.myModule.people.push(person); 
 		$('#personModal').modal('hide');
+		return false; });
+	$('#addItem').click(function(){
+		var newName = $('#newItemName').val();
+		item = {
+			name: newName,
+			brought: brought,
+			bringer: "Wayne",
+			active: false
+		};
+		console.log("Adding Item in jQuery");
+		BodyNameSpace.myModule.itemList.push(item); 
+		$('#itemModal').modal('hide');
 		return false; });
 		
 		
@@ -104,7 +120,22 @@ BodyNameSpace.myModule= function() {
 		active: false
 	}];
 	
-	var setActive = function(nameSelector, person){
+	var itemList = [
+	{
+		name: "Cheetos",
+		brought: true,
+		bringer: "Adam",
+		active: false
+	},
+	{
+		name: "Xbox",
+		brought: true,
+		bringer: "Wayne",
+		active: false
+	}
+	]
+	
+/* 	var setActive = function(nameSelector, person){
 		console.log(person);
 		if(person.active)
 		{
@@ -120,7 +151,7 @@ BodyNameSpace.myModule= function() {
 			//console.log(personDetail);
 			//$(personDetail).show();
 		}
-	};
+	}; */
 	
 	var init = function(){
 /* 		jQuery.each(people, function(index,value) {
@@ -134,7 +165,8 @@ BodyNameSpace.myModule= function() {
 	{
 		init: init,
 		people: people,
-		setActive: setActive
+		itemList: itemList
+		//setActive: setActive
 	};
 	
 	return oPublic;

@@ -146,6 +146,41 @@
 		</div>
 	  </div>
 	</div>	
+	<!--/.Modal -->
+	
+	<!-- Add Item Modal -->
+	<div class="modal fade" id="itemModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+	  <div class="modal-dialog">
+		<div class="modal-content">
+		  <div class="modal-header">
+			<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+			<h4 class="modal-title" id="myModalLabel">Modal title</h4>
+		  </div>
+		  <div class="modal-body">
+			<div class="form-group">
+				<label for="newName">Item Name</label>
+				<input class="form-control" id="newItemName" placeholder="Blankets">
+			</div>
+			<div class="form-group">
+				<label for="Brought">Is It Being Brought</label>
+				<div id="Brought">
+				<label class="radio-inline">
+				  <input type="radio" name="brought" id="inlineRadio1" value=true> Yes
+				</label>
+				<label class="radio-inline">
+				  <input type="radio" name="brought" id="inlineRadio2" value=false checked="checked"> No
+				</label>
+				</div>
+			</div>
+		  </div>
+		  <div class="modal-footer">
+			<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+			<button type="button" id="addItem" class="btn btn-primary" data-dismiss="modal" ng-click>Add Item</button>
+		  </div>
+		</div>
+	  </div>
+	</div>	
+	<!--/.Modal -->
 	
 	<div class="container" ng-controller="BodyController as innerBody">
 		<div class="row">
@@ -154,20 +189,32 @@
 					<span> Participants </span>
 					<a id="addSign" data-toggle="modal" data-target="#personModal" class="glyphicon glyphicon-plus-sign"></a>	
 				</h2>			
-					<div class ="list-group" >
-						<div class ="personList" ng-repeat="people in people | orderBy: 'name'" ng-controller="RepeatController as repeatControl">
-							<a id="{{people.name}}" ng-click="setActive();" class="list-group-item" my-repeat-directive> 
-									{{people.name}}
-							</a>
-							<a id="{{people.name + 'Detail'}}" ng-show="active" class="list-group-item">
-									{{people.attending}}
-							</a>
-						</div>
+				<div class ="list-group" >
+					<div class ="List" ng-repeat="people in people | orderBy: 'name'" ng-controller="RepeatController as repeatControl">
+						<a id="{{people.name}}" ng-click="setActive(people);" class="list-group-item" my-repeat-directive> 
+								{{people.name}}
+						</a>
+						<a id="{{people.name + 'Detail'}}" ng-show="active" class="list-group-item">
+								{{people.attending}}
+						</a> 
 					</div>
+				</div>
 			</div>
 			<div class="col-md-4">
-				<h2> Item Check-list </h2>
-				<p> </p>
+				<h2> 
+					<span> Item Check-list </span>
+					<a id="addSign" data-toggle="modal" data-target="#itemModal" class="glyphicon glyphicon-plus-sign"></a>	
+				</h2>
+				<div class ="list-group" >
+					<div class ="List" ng-repeat="item in itemList | orderBy: 'name'" ng-controller="RepeatController as repeatControl">
+						<a id="{{item.name}}" ng-click="setActive(item);" class="list-group-item" my-repeat-directive> 
+								{{item.name}}
+						</a>
+						<a id="{{item.name + 'Detail'}}" ng-show="active" class="list-group-item">
+								{{item.brought}}
+						</a>
+					</div>
+				</div>
 			</div>
 			<div class="col-md-4">
 				<h2> Suggestions </h2>
