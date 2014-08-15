@@ -128,20 +128,20 @@
 				<label for="Attendance">Attendance</label>
 				<div id="Attendance">
 				<label class="radio-inline">
-				  <input type="radio" name="inlineRadioOptions" id="inlineRadio1" value="Attending"> Attending
+				  <input type="radio" name="attendance" id="inlineRadio1" value="Attending"> Attending
 				</label>
 				<label class="radio-inline">
-				  <input type="radio" name="inlineRadioOptions" id="inlineRadio2" value="Might Attend"> Might Attend
+				  <input type="radio" name="attendance" id="inlineRadio2" value="Might Attend" checked="checked"> Might Attend
 				</label>
 				<label class="radio-inline">
-				  <input type="radio" name="inlineRadioOptions" id="inlineRadio3" value="Not Attending"> Not Attending
+				  <input type="radio" name="attendance" id="inlineRadio3" value="Not Attending"> Not Attending
 				</label>
 				</div>
 			</div>
 		  </div>
 		  <div class="modal-footer">
 			<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-			<button type="button" id="addPerson" class="btn btn-primary" data-dismiss="modal" ng-click="addPerson();">Add Person</button>
+			<button type="button" id="addPerson" class="btn btn-primary" data-dismiss="modal" ng-click>Add Person</button>
 		  </div>
 		</div>
 	  </div>
@@ -155,8 +155,8 @@
 					<a id="addSign" data-toggle="modal" data-target="#personModal" class="glyphicon glyphicon-plus-sign"></a>	
 				</h2>			
 					<div class ="list-group" >
-						<div ng-repeat="people in people | orderBy: 'name'" ng-controller="RepeatController as repeatControl">
-							<a   id="{{people.name}}" ng-click="setActive();" class="list-group-item" my-repeat-directive> 
+						<div class ="personList" ng-repeat="people in people | orderBy: 'name'" ng-controller="RepeatController as repeatControl">
+							<a id="{{people.name}}" ng-click="setActive();" class="list-group-item" my-repeat-directive> 
 									{{people.name}}
 							</a>
 							<a id="{{people.name + 'Detail'}}" ng-show="active" class="list-group-item">

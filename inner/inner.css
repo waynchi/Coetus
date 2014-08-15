@@ -30,3 +30,9 @@ z-index:1151;
 	color: inherit;
 	outline: none; 
 }
+
+.personList .list-group-item:first-child
+{
+	cursor: pointer;
+	cursor: hand;
+}

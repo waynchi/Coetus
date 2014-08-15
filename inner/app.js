@@ -13,12 +13,25 @@
 		$scope.$on('ngRepeatFinished', function (ngRepeatFinishedEvent) {
 			BodyNameSpace.myModule.init();
 		});
+		
 	}]);
 	
 	app.controller('RepeatController', ['$scope', function($scope) {
 		$scope.active = false;
 		$scope.setActive = function(){
-			$scope.active = !$scope.active;
+			$scope.active = !$scope.active;		
+			var nameSelector = "[id='" + $scope.people.name + "']"; 
+			console.log(nameSelector);
+			if($scope.people.active)
+			{
+				$(nameSelector).removeClass('active');
+				$scope.people.active = !$scope.people.active;
+			}
+			else
+			{
+				$(nameSelector).addClass('active');
+				$scope.people.active = !$scope.people.active;
+			}
 		}
 	}]);
 	
