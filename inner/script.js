@@ -62,13 +62,13 @@ InnerNameSpace.myModule = function(){
 	
 	var saveModal = function(){
 		console.log("Saving Modal");
-		event.Title = "TESTING 123 TESTING"
-		event.Description = $('#eventDescription').value;
-		event.Secondary = $('#eventSecondary').value;
-		event.Calendar = $('#datepicker').value;
-		event.Hour = $('#timepicker').value;
+		event.Title = $('#eventTitle').val();
+		event.Description = $('#eventDescription').val();
+		event.Secondary = $('#eventSecondary').val();
+		event.Calendar = $('#datepicker').val();
+		event.Hour = $('#timepicker').val();
 		event.Time = event.Hour + " on " + event.Calendar;
-		event.Location = $('#eventLocation').value;
+		event.Location = $('#eventLocation').val();
 	};
 	
 	var closeModal = function(){
@@ -195,7 +195,7 @@ BodyNameSpace.myModule= function() {
 
 (function() {
 	$('#closeModalButton').click(function(){InnerNameSpace.myModule.closeModal()});
-	//$('#saveModalButton').click(function(){InnerNameSpace.myModule.saveModal()});
+	$('#saveModalButton').click(function(){InnerNameSpace.myModule.saveModal()});
 })();
 
 

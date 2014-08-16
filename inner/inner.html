@@ -72,39 +72,39 @@
 		  <div class="modal-body" ng-controller = "HeadingController as heading">
 			<div class="form-group">
 				<label for="eventTitle">Event Title</label>
-				<input class="form-control" ng-model="event.Title" id="eventTitle" value="{{event.Title}}" >
+				<input class="form-control" id="eventTitle" value="{{event.Title}}" >
 			</div>
 			<div class="form-group">
 				<label for="eventDescription">Event Description</label>
-				<input class="form-control" ng-model="event.Description" id="eventDescription" value="{{event.Description}}">
+				<input class="form-control" id="eventDescription" value="{{event.Description}}">
 			</div>
 			<div class="form-group">
 				<label for="eventSecondary">Event Secondary Description</label>
-				<input class="form-control" ng-model="event.Secondary" id="eventSecondary" value="{{event.Secondary}}">
+				<input class="form-control" id="eventSecondary" value="{{event.Secondary}}">
 			</div>
 			<div class="form-group">
 				<div class="row">
 					<div class="col-lg-6">
 						<label for="timepicker">Time</label>
 						<div class="bootstrap-timepicker">
-							<input class="form-control" ng-model="event.Hour" id="timepicker" value="{{event.Hour}}">
+							<input class="form-control" id="timepicker" value="{{event.Hour}}">
 						</div>
 					</div>
 					<div class="col-lg-6">
 						<label for="datepicker">Date</label>
-						<input class="form-control" ng-model="event.Calendar" id="datepicker" value="{{event.Calendar}}">
+						<input class="form-control" id="datepicker" value="{{event.Calendar}}">
 					</div>
 				</div>
 				
 			</div>
 			<div class="form-group">
 				<label for="eventLocation">Event Location</label>
-				<input class="form-control" ng-model="event.Location" id="eventLocation" value="{{event.Location}}">
+				<input class="form-control" id="eventLocation" value="{{event.Location}}">
 			</div>
 		  </div>
 		  <div class="modal-footer">
 			<!-- <button id="closeModalButton" type="button" class="btn btn-default" data-dismiss="modal">Close</button> -->
-			<button id="saveModalButton" type="button" class="btn btn-primary" data-dismiss="modal">Save changes</button>
+			<button id="saveModalButton" type="button" class="btn btn-primary" data-dismiss="modal" ng-click>Save changes</button>
 		  </div>
 		</div>
 	  </div>
