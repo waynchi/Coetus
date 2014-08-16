@@ -191,9 +191,12 @@
 				</h2>			
 				<div class ="list-group" >
 					<div class ="List" ng-repeat="people in people | orderBy: 'name'" ng-controller="RepeatController as repeatControl">
-						<a id="{{people.name}}" ng-click="setActive(people);" class="list-group-item" my-repeat-directive> 
-								{{people.name}}
-						</a>
+						<span class="list-group-item" ng-click="setActive(people);">
+							<a id="{{people.name}}" class="peopleSpan" my-repeat-directive> 
+									{{people.name}}
+							</a>
+							<a id="editPerson" stop-event='click' class="glyphicon glyphicon-pencil"></a>		
+						</span>
 						<a id="{{people.name + 'Detail'}}" ng-show="active" class="list-group-item">
 								{{people.attending}}
 						</a> 

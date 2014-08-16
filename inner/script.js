@@ -97,29 +97,35 @@ BodyNameSpace.myModule= function() {
 	{
 		name: "Adam",
 		attending: "Might Attend",
+		items: [],
 		active: false
 	},
 	{
 		name: "Wayne",
 		attending: "Attending",
+		items: [],
 		active: false
 	},
 	{
 		name: "Jennifer",
 		attending: "Attending",
+		items: [],
 		active: false
 	},
 	{
 		name: "Richard",
 		attending: "Might Attend",
+		items: [],
 		active: false
 	},
 	{
 		name: "Eric",
 		attending: "Not Attending",
+		items: [],
 		active: false
 	}];
 	
+	// Must push into people[x].items in order to work
 	var itemList = [
 	{
 		name: "Cheetos",

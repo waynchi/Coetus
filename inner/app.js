@@ -34,7 +34,25 @@
 				activater.active = !activater.active;
 			}
 		}
+		
+		
+		$scope.stopActive = function(event){
+			console.log(event);
+			//event.stopPropogation();
+		}
+		
 	}]);
+	
+	app.directive('stopEvent', function () {
+        return {
+            restrict: 'A',
+            link: function (scope, element, attr) {
+                element.bind(attr.stopEvent, function (e) {
+                    e.stopPropagation();
+                });
+            }
+        };
+     });
 	
 	app.directive('myRepeatDirective', function($timeout) {
 	  return function(scope, element, attrs) {

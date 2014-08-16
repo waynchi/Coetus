@@ -31,6 +31,26 @@ z-index:1151;
 	outline: none; 
 }
 
+#editPerson {
+	float: right;
+	cursor: pointer; 
+	cursor: hand;
+	text-decoration: none;
+	color: inherit;
+	outline: none; 
+}
+ 
+.peopleSpan{
+	display: inline-block;
+	color: inherit;
+	outline: none; 
+}
+.peopleSpan:hover{
+	display: inline-block;
+	text-decoration: none;
+	color: inherit;
+	outline: none; 
+}
 .List .list-group-item:first-child
 {
 	cursor: pointer;
