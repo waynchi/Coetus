@@ -21,7 +21,7 @@
 		$scope.active = false;
 		$scope.setActive = function(activater){
 			$scope.active = !$scope.active;		
-			var nameSelector = "[id='" + activater.name + "']"; 
+			var nameSelector = "[id='" + activater.name + 'Span' + "']"; 
 			console.log(nameSelector);
 			if(activater.active)
 			{
