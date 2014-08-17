@@ -31,7 +31,7 @@ z-index:1151;
 	outline: none; 
 }
 
-#editPerson {
+#editPerson, #editItem {
 	float: right;
 	cursor: pointer; 
 	cursor: hand;
@@ -40,12 +40,12 @@ z-index:1151;
 	outline: none; 
 }
  
-.peopleSpan{
+.peopleSpan, .itemSpan{
 	display: inline-block;
 	color: inherit;
 	outline: none; 
 }
-.peopleSpan:hover{
+.peopleSpan:hover, .itemSpan:hover{
 	display: inline-block;
 	text-decoration: none;
 	color: inherit;

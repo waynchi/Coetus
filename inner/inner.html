@@ -40,7 +40,7 @@
         </div>
         <div class="collapse navbar-collapse">
           <ul class="nav navbar-nav">
-            <li class="active"><a href="#">Home</a></li>
+            <li class="active"><a href="inner.html">Home</a></li>
             <li><a href="#about">About</a></li>
             <li><a href="#contact">Contact</a></li>
           </ul>
@@ -210,9 +210,12 @@
 				</h2>
 				<div class ="list-group" >
 					<div class ="List" ng-repeat="item in itemList | orderBy: 'name'" ng-controller="RepeatController as repeatControl">
-						<a id="{{item.name}}" ng-click="setActive(item);" class="list-group-item" my-repeat-directive> 
-								{{item.name}}
-						</a>
+						<span id="{{item.name + 'Span'}}" class="list-group-item" ng-click="setActive(item);">
+							<a id="{{item.name}}" class="itemSpan" my-repeat-directive> 
+									{{item.name}}
+							</a>
+							<a id="editItem" stop-event='click' class="glyphicon glyphicon-pencil"></a>		
+						</span>
 						<a id="{{item.name + 'Detail'}}" ng-show="active" class="list-group-item">
 								{{item.brought}}
 						</a>
