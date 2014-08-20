@@ -87,7 +87,7 @@
 					<div class="col-lg-6">
 						<label for="timepicker">Time</label>
 						<div class="bootstrap-timepicker">
-							<input class="form-control" id="timepicker" value="{{event.Hour}}">
+							<input class="form-control" id="timepicker">
 						</div>
 					</div>
 					<div class="col-lg-6">
@@ -95,7 +95,6 @@
 						<input class="form-control" id="datepicker" value="{{event.Calendar}}">
 					</div>
 				</div>
-				
 			</div>
 			<div class="form-group">
 				<label for="eventLocation">Event Location</label>
@@ -127,15 +126,29 @@
 			<div class="form-group">
 				<label for="Attendance">Attendance</label>
 				<div id="Attendance">
-				<label class="radio-inline">
-				  <input type="radio" name="attendance" id="inlineRadio1" value="Attending"> Attending
-				</label>
-				<label class="radio-inline">
-				  <input type="radio" name="attendance" id="inlineRadio2" value="Might Attend" checked="checked"> Might Attend
-				</label>
-				<label class="radio-inline">
-				  <input type="radio" name="attendance" id="inlineRadio3" value="Not Attending"> Not Attending
-				</label>
+					<label class="radio-inline">
+					  <input type="radio" name="attendance" id="inlineRadio1" value="Attending"> Attending
+					</label>
+					<label class="radio-inline">
+					  <input type="radio" name="attendance" id="inlineRadio2" value="Might Attend" checked="checked"> Might Attend
+					</label>
+					<label class="radio-inline">
+					  <input type="radio" name="attendance" id="inlineRadio3" value="Not Attending"> Not Attending
+					</label>
+				</div>
+			</div>
+			<div class="form-group">
+				<div class="row">
+					<div class="col-lg-6">
+						<label for="personTimepicker">Time</label>
+						<div class="bootstrap-timepicker">
+							<input class="form-control" id="personTimepicker">
+						</div>
+					</div>
+					<div class="col-lg-6" ng-controller="HeadingController as modalControl">
+						<label for="personDatepicker">Date</label>
+						<input class="form-control" id="personDatepicker" value="{{event.Calendar}}">
+					</div>
 				</div>
 			</div>
 		  </div>

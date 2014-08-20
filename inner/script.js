@@ -48,7 +48,7 @@ InnerNameSpace.myModule = function(){
 		Title: "Video Game Night",
 		Description: "Video Game Party featuring Super Smash Bros., League of Legends, Starcraft II, and more!",
 		Secondary: "Dinner will be served.",
-		Calendar: "7/16/2014",
+		Calendar: "8/16/2014",
 		Hour: "10:00 AM",
 		Time: "",
 		Location: "USC Mudd Hall Room 101"
@@ -181,7 +181,7 @@ BodyNameSpace.myModule= function() {
 (function(){
 	$('#datepicker').datepicker();
 	
-	var t ;
+	/* var t ;
 	$( document ).on(
 		'DOMMouseScroll mousewheel scroll',
 		'#myModal', 
@@ -191,12 +191,18 @@ BodyNameSpace.myModule= function() {
 				$('#datepicker').datepicker('place')
 			}, 100 );        
 		}
-	);
+	); */
 	$('#timepicker').timepicker({
                 minuteStep: 5,
                 showInputs: false,
                 disableFocus: true
-            });
+    });
+	$('#personDatepicker').datepicker();
+	$('#personTimepicker').timepicker({
+                minuteStep: 5,
+                showInputs: false,
+                disableFocus: true
+    });
 })();
 
 (function() {
