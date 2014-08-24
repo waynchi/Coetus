@@ -8,6 +8,7 @@ font-family: 'Vollkorn', Georgia, Times, serif;
 
 body{
 	padding-top: 70px;
+	background: url(../img/brushed.png) repeat 0 0;
 }
 
 .jumbotron {
