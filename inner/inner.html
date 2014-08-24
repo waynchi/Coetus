@@ -197,16 +197,52 @@
 					<a id="addSign" data-toggle="modal" data-target="#personModal" class="glyphicon glyphicon-plus-sign"></a>	
 				</h2>			
 				<div class ="list-group" >
-					<div class ="List" ng-repeat="people in people | orderBy: 'name'" ng-controller="RepeatController as repeatControl">
-						<span id="{{people.name + 'Span'}}" class="list-group-item"  ng-click="setActive(people);">
-							<a id="{{people.name}}" class="peopleSpan" my-repeat-directive> 
-									{{people.name}}
+					<div class ="List" ng-repeat="person in people | orderBy: 'name'" ng-controller="RepeatController as repeatControl">
+						<span id="{{person.name + 'Span'}}" class="list-group-item"  ng-click="setActive(person);">
+							<a id="{{person.name}}" class="peopleSpan" my-repeat-directive> 
+									{{person.name}}
 							</a>
 							<a id="editPerson" stop-event='click' class="glyphicon glyphicon-pencil"></a>		
 						</span>
-						<a id="{{people.name + 'Detail'}}" ng-show="active" class="list-group-item">
-								{{people.attending}}
+						<a id="{{person.name + 'Detail'}}" ng-show="active" class="list-group-item">
+								{{person.attending}}
 						</a> 
+						<!-- Edit Person Modal -->
+						<div class="modal fade" id="{{'edit' + person.name + 'Modal'}}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+						  <div class="modal-dialog">
+							<div class="modal-content">
+							  <div class="modal-header">
+								<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+								<h4 class="modal-title" id="myModalLabel">Modal title</h4>
+							  </div>
+							  <div class="modal-body">
+								<div class="form-group">
+									<label for="{{'edit' + person.name + 'ModalNewName'}}">Name</label>
+									<input class="form-control" id="{{'edit' + person.name + 'ModalNewName'}}" placeholder="John">
+								</div>
+								<div class="form-group">
+									<label for="{{'edit' + person.name + 'ModalAttendance'}}">Attendance</label>
+									<div id="{{'edit' + person.name + 'ModalAttendance'}}">
+									<label class="radio-inline">
+									  <input type="radio" name="{{'edit' + person.name + 'ModalAttendanceRadio'}}" id="inlineRadio1" value="Attending"> Attending
+									</label>
+									<label class="radio-inline">
+									  <input type="radio" name="{{'edit' + person.name + 'ModalAttendanceRadio'}}" id="inlineRadio2" value="Might Attend" checked="checked"> Might Attend
+									</label>
+									<label class="radio-inline">
+									  <input type="radio" name="{{'edit' + person.name + 'ModalAttendanceRadio'}}" id="inlineRadio3" value="Not Attending"> Not Attending
+									</label>
+									</div>
+								</div>
+							  </div>
+							  <div class="modal-footer">
+								<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+								<button type="button" id="editPersonButton" class="btn btn-primary" data-dismiss="modal" ng-click>Save Changes</button>
+							  </div>
+							</div>
+						  </div>
+						</div>	
+						<!--/.Modal -->
 					</div>
 				</div>
 			</div>

@@ -49,6 +49,16 @@
             link: function (scope, element, attr) {
                 element.bind(attr.stopEvent, function (e) {
                     e.stopPropagation();
+					var tempModalID = '#edit' + scope.person.name + 'Modal';
+					var tempNewNameID = tempModalID + 'NewName';
+					var tempAttendanceID = tempModalID + 'Attendance';
+					var tempAttendanceRadio =  'edit' + scope.person.name + 'ModalAttendanceRadio';
+					var inputRadio = 'input:radio[name=' + tempAttendanceRadio + ']';
+					var inputRadioValue = '[value="' +  scope.person.attending + '"]';
+					
+					$(inputRadio).filter(inputRadioValue).prop('checked', true);
+					$(tempModalID).modal('toggle');
+					$(tempNewNameID).val(scope.person.name);
                 });
             }
         };
@@ -57,7 +67,7 @@
 	app.directive('myRepeatDirective', function($timeout) {
 	  return function(scope, element, attrs) {
 		if (scope.$last){
-			console.log(scope.people);
+			console.log(scope.person);
 			$timeout(function () {
 				scope.$emit('ngRepeatFinished');
 			});
