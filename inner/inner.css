@@ -1,5 +1,14 @@
+h1, h2, h3, h4, h5, h6 {
+	  font-family: 'Ubuntu', Helvetica, Arial, sans-serif;
+}
+
+p, div {
+font-family: 'Vollkorn', Georgia, Times, serif;
+}
+
 body{
 	padding-top: 70px;
+	background: url(../img/brushed.png) repeat 0 0;
 }
 
 .jumbotron {
